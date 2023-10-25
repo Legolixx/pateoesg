@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Use the `cors` middleware with the specific origin you want to allow.
 const corsOptions = {
   
-  origin: ['https://pateoesg.vercel.app', 'http://localhost:3000'],
+  origin: '*',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 };
 
