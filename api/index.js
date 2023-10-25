@@ -10,15 +10,11 @@ const app = express();
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-// Use the `cors` middleware with the specific origin you want to allow.
-const corsOptions = {
-  
+app.use(cors({
   origin: '*',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-};
-
-app.use(cors(corsOptions));
+  allowedHeaders: 'Content-Type,Authorization',
+}));
 
 app.use("/api/auth/", authRouter);
 app.use("/api/auth/", userInfoRouter);
